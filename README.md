@@ -1,5 +1,5 @@
 # CodeDisclosed
-This repository has all the MATLAB code used in all the videos uploaded on the Code Disclosed YouTube channel (https://www.youtube.com/@CodeDisclosed)
+This repository has all the MATLAB code used in all the videos uploaded on the Code Disclosed YouTube channel ([https://www.youtube.com/@CodeDisclosed](https://www.youtube.com/channel/UC5GOqkt-9FeB_-dSPn5_FUA))
 
 Channel Description
 

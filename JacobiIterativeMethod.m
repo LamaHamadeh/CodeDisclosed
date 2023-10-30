@@ -1,26 +1,30 @@
 
 %Code Disclosed 
-%This code implements Jacobi iterarive method to solve Ax=b system of
-%equations
-%--------------
 
-close all;
-clear all;
-clc
+%This code implements Jacobi iterative method to solve Ax=b system of
+%equations
+
+% In numerical linear algebra, the Jacobi method (a.k.a. the Jacobi 
+% iteration method) is an iterative algorithm for determining the solutions
+% of a strictly diagonally dominant system of linear equations.
 
 % In mathematics, a square matrix is said to be diagonally dominant if, 
 % for every row of the matrix, the magnitude/absolute value of the 
 % diagonal entry in a row is larger than or equal to the sum of the 
 % magnitudes/absolute values of all the other (non-diagonal) entries in 
 % that row. 
+%--------------
 
+close all;
+clear all;
+clc
 
 %Equations to solve (Strictly Dominant Diagonal A Matrix (SDD))
 % 4x-y+z=7
 % 4x-8y+z=-21
 % -2x+y+5z=15
 
-%Define initial guess for the three variables
+%Define the initial guess for the three variables
 x1(1) = 13;
 y1(1) = -5;
 z1(1) = pi;
@@ -48,7 +52,7 @@ hold on
 % 4x-8y+z=-21
 % 4x-y+z=7
 
-%Define initial guess for the three variables
+%Define the initial guess for the three variables
 x2(1) = 13;
 y2(1) = -5;
 z2(1) = pi;

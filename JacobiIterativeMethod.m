@@ -40,8 +40,10 @@ end
 figure;
 subplot(2,1,1)
 plot(1:11,x1,'b',1:11,y1,'r',1:11,z1,'g','LineWidth',1.5)
-xlabel('Number of Iterations')
-ylabel('Solutions')
+xlabel('Number of Iterations','Interpreter','latex')
+ylabel('Solutions','Interpreter','latex')
+legend('$x$','$y$','$z$','Interpreter','latex')
+title('Matrix $A$ is a Strictly Dominant Diagonal Matrix (SDD)','Interpreter','latex')
 set(gca,'TickLabelInterpreter','latex','FontSize',12)
 hold on
 
@@ -67,8 +69,10 @@ end
 %plot the solution
 subplot(2,1,2)
 plot(1:11,x2,'b',1:11,y2,'r',1:11,z2,'g','LineWidth',1.5)
-xlabel('Number of Iterations')
-ylabel('Solutions')
+xlabel('Number of Iterations','Interpreter','latex')
+ylabel('Solutions','Interpreter','latex')
+legend('$x$','$y$','$z$','Interpreter','latex')
+title('Matrix $A$ is not a Strictly Dominant Diagonal Matrix (SDD)','Interpreter','latex')
 set(gca,'TickLabelInterpreter','latex','FontSize',12)
 
 %------------------------

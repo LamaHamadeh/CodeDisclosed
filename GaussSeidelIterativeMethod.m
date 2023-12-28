@@ -38,11 +38,13 @@ end
 
 %plot the solution
 figure;
-subplot(2,1,1)
+subplot(1,2,1)
 plot(1:11,x1,'b',1:11,y1,'r',1:11,z1,'g','LineWidth',1.5)
 xlabel('Number of Iterations','Interpreter','latex')
 ylabel('Solutions','Interpreter','latex')
+title('Matrix $A$ is SDD','Interpreter','latex')
 set(gca,'TickLabelInterpreter','latex','FontSize',12)
+axis square
 hold on
 
 %------------------------
@@ -65,11 +67,13 @@ for j = 1:10
 end
 
 %plot the solution
-subplot(2,1,2)
+subplot(1,2,2)
 plot(1:11,x2,'b',1:11,y2,'r',1:11,z2,'g','LineWidth',1.5)
 xlabel('Number of Iterations','Interpreter','latex')
 ylabel('Solutions','Interpreter','latex')
+title('Matrix $A$ is not SDD','Interpreter','latex')
 set(gca,'TickLabelInterpreter','latex','FontSize',12)
+axis square
 %------------------------
 
 %comparision between Jacobi method and Gauss-Seidel method
@@ -87,24 +91,25 @@ end
 
 %plot both solutions
 figure;
-subplot(2,1,1)
+subplot(1,2,1)
 %Guass-Seidel
 plot(1:11,x1,'b',1:11,y1,'r',1:11,z1,'g','LineWidth',1.5)
 xlabel('Number of Iterations','Interpreter','latex')
 ylabel('Solutions','Interpreter','latex')
 legend('$x$','$y$','$z$','Interpreter','latex')
-title('Gauss-Seidel Method Convergence','Interpreter','latex')
+title('Gauss-Seidel Method','Interpreter','latex')
 set(gca,'TickLabelInterpreter','latex','FontSize',12)
+axis square
 hold on
 %Jacobi
-subplot(2,1,2)
+subplot(1,2,2)
 plot(1:11,x3,'b',1:11,y3,'r',1:11,z3,'g','LineWidth',1.5)
 xlabel('Number of Iterations','Interpreter','latex')
 ylabel('Solutions','Interpreter','latex')
 legend('$x$','$y$','$z$','Interpreter','latex')
-title('Jacobi Method Convergence','Interpreter','latex')
+title('Jacobi Method','Interpreter','latex')
 set(gca,'TickLabelInterpreter','latex','FontSize',12)
-
+axis square
 %------------------------
 
 

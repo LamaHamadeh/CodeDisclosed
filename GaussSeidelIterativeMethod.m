@@ -40,8 +40,8 @@ end
 figure;
 subplot(2,1,1)
 plot(1:11,x1,'b',1:11,y1,'r',1:11,z1,'g','LineWidth',1.5)
-xlabel('Number of Iterations')
-ylabel('Solutions')
+xlabel('Number of Iterations','Interpreter','latex')
+ylabel('Solutions','Interpreter','latex')
 set(gca,'TickLabelInterpreter','latex','FontSize',12)
 hold on
 
@@ -67,13 +67,13 @@ end
 %plot the solution
 subplot(2,1,2)
 plot(1:11,x2,'b',1:11,y2,'r',1:11,z2,'g','LineWidth',1.5)
-xlabel('Number of Iterations')
-ylabel('Solutions')
+xlabel('Number of Iterations','Interpreter','latex')
+ylabel('Solutions','Interpreter','latex')
 set(gca,'TickLabelInterpreter','latex','FontSize',12)
 %------------------------
 
-% comparison between the Jacobi method and the Gauss-Seidel method
-%Define the initial guess for the three variables
+%comparision between Jacobi method and Gauss-Seidel method
+%Define initial guess for the three variables
 x3(1) = 13;
 y3(1) = -5;
 z3(1) = pi;

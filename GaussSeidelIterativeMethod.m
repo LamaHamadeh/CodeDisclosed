@@ -70,6 +70,40 @@ plot(1:11,x2,'b',1:11,y2,'r',1:11,z2,'g','LineWidth',1.5)
 xlabel('Number of Iterations')
 ylabel('Solutions')
 set(gca,'TickLabelInterpreter','latex','FontSize',12)
+%------------------------
+
+% comparison between the Jacobi method and the Gauss-Seidel method
+%Define the initial guess for the three variables
+x3(1) = 13;
+y3(1) = -5;
+z3(1) = pi;
+
+%go through Jacobi iterations
+for j = 1:10
+    x3(j+1) = (7+y3(j)-z3(j))/4;
+    y3(j+1) = (21+4*x3(j)+z3(j))/8;
+    z3(j+1) = (15+2*x3(j)-y3(j))/5;
+end
+
+%plot both solutions
+figure;
+subplot(2,1,1)
+%Guass-Seidel
+plot(1:11,x1,'b',1:11,y1,'r',1:11,z1,'g','LineWidth',1.5)
+xlabel('Number of Iterations','Interpreter','latex')
+ylabel('Solutions','Interpreter','latex')
+legend('$x$','$y$','$z$','Interpreter','latex')
+title('Gauss-Seidel Method Convergence','Interpreter','latex')
+set(gca,'TickLabelInterpreter','latex','FontSize',12)
+hold on
+%Jacobi
+subplot(2,1,2)
+plot(1:11,x3,'b',1:11,y3,'r',1:11,z3,'g','LineWidth',1.5)
+xlabel('Number of Iterations','Interpreter','latex')
+ylabel('Solutions','Interpreter','latex')
+legend('$x$','$y$','$z$','Interpreter','latex')
+title('Jacobi Method Convergence','Interpreter','latex')
+set(gca,'TickLabelInterpreter','latex','FontSize',12)
 
 %------------------------
 

@@ -1,9 +1,7 @@
 
 %Code Disclosed | 
-%This code gives an example of how the line fitting method is implemented
-%in MATLAB using a toy data points with the code that generates its best
-%fit line. For this method, polyfit and polyval commands are essentail to
-%use. 
+%This code applies Principal Component Analysis as a dimensionality 
+% reduction method for image compression applications.
 %--------------
 
 clear all;

@@ -15,7 +15,7 @@ A = imread('Lily.jpeg');
 nx = size(A,1);
 ny = size(A,2);
 
-%show the original colored image
+%show the original coloured image
 figure;
 imagesc(A)
 axis off
@@ -23,6 +23,9 @@ axis square
 title('Durham Castle')
 %--------------
 
+%PCA Algorithm
+
+%STEP 1: Assemble and put together the dataset
 %convert to gray
 X = double(rgb2gray(A));
 
@@ -36,12 +39,10 @@ colormap gray
 title('Original')
 %--------------
 
-%PCA Algorithm
-
 % STEP 2: Compute the mean of all rows
 mn = mean(X,2);
 
-% STEP 3: Build the mean-centring dataset (Data-mean) by subtracting the
+% STEP 3: Build the the mean-centering dataset (Data-mean) by subtracting the
 % mean mn from the dataset X
 X = X - mn*ones(1,ny);
 
@@ -56,7 +57,7 @@ L = X*X';
 %Eigenvalues Analysis
 
 % D are the eigenvalues of the matrix L.
-%extract the principal components eigenvalues, i.e., diagonal elements of D
+%extract the principal components eigenvalues, i.e.m diagonal elements of D
 S = diag(D);
 
 %sort in decreasing order

@@ -15,7 +15,7 @@ A = imread('Lily.jpeg');
 nx = size(A,1);
 ny = size(A,2);
 
-%show the original coloured image
+%show the original colored image
 figure;
 imagesc(A)
 axis off
@@ -41,8 +41,8 @@ title('Original')
 % STEP 2: Compute the mean of all rows
 mn = mean(X,2);
 
-% STEP 3: Build the the mean-centring dataset (Data-mean) by subtracting the
-% mean mn from the datset X
+% STEP 3: Build the mean-centring dataset (Data-mean) by subtracting the
+% mean mn from the dataset X
 X = X - mn*ones(1,ny);
 
 % STEP 4: Construct the covariance matrix L:
@@ -56,7 +56,7 @@ L = X*X';
 %Eigenvalues Analysis
 
 % D are the eigenvalues of the matrix L.
-%extract the principal components eigenvalues, i.e.m diagonal elements of D
+%extract the principal components eigenvalues, i.e., diagonal elements of D
 S = diag(D);
 
 %sort in decreasing order
@@ -101,7 +101,7 @@ plotind = 2;
 for r = [5 20 100] %truncation value
     %Back project data to original basis with adding the mean back to the
     %image
-    Xapprox = (V(:,1:r) * proj(:,1:r)') + mn; %approximated/reconstructed image
+    Xapprox = (V(:,1:r) * proj(:,1:r)') + mn*ones(1,ny); %approximated/reconstructed image
 %     Xapprox = U(:,1:r)*S(1:r,1:r)*V(:,1:r)'; %approximated/reconstructed image
     %show the approximated/compressed image
     figure(1)

@@ -103,7 +103,7 @@ plot(PCs(:,2),'r','LineWidth',2)
 plot(PCs(:,3),'g','LineWidth',2)
 plot(PCs(:,4),'c','LineWidth',2)
 plot(PCs(:,5),'m','LineWidth',2)
-xlabel('Number of , $r$','Interpreter','latex')
+xlabel('Dimension of Principal Components','Interpreter','latex')
 ylabel('Principal Components','Interpreter','latex')
 grid on
 axis square

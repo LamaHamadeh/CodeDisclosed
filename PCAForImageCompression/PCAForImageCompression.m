@@ -9,7 +9,7 @@ close all;
 
 %read image
 % A = imread('Durham_Castle.jpg');
-A = imread('Lily.jpeg');
+A = imread('Arum_Lily.jpeg');
 
 %define image dimensions
 nx = size(A,1);
@@ -20,7 +20,8 @@ figure;
 imagesc(A)
 axis off
 axis square
-title('Durham Castle')
+% title('Durham Castle')
+title('Arum Lily Flower')
 %--------------
 
 %PCA Algorithm
@@ -30,7 +31,7 @@ title('Durham Castle')
 X = double(rgb2gray(A));
 
 %show original Grayscaled image
-figure(1);
+figure(2);
 subplot(2,2,1)
 imagesc(X)
 axis off
@@ -57,7 +58,7 @@ L = X*X';
 %Eigenvalues Analysis
 
 % D are the eigenvalues of the matrix L.
-%extract the principal components eigenvalues, i.e.m diagonal elements of D
+%extract the principal components eigenvalues, i.e. diagonal elements of D
 S = diag(D);
 
 %sort in decreasing order
@@ -65,7 +66,7 @@ S = diag(D);
 S = S(m_arrange);
 V = V(:,m_arrange);
 
-%to show eigenvalues entire spectrum
+%to show eigenvalues of the entire spectrum
 figure
 subplot(1,2,1)
 plot(S/sum(S),'ko','LineWidth',2)
@@ -89,23 +90,39 @@ set(gca,'TickLabelInterpreter','latex')
 set(gca,'FontSize',16)
 %--------------
 
-%Compressed Image Reconstruction
-
 % Get PCA ranks/scores/modes by projecting our mean_centred dataset
 % on the covariance matrix eigenvectors (principal component vector space)
-% Project data onto PCs.
-proj = X' * V ;
+% Project data onto eigenvectors/loadings.
+PCs = X' * V ;
+
+%visulaise the first 5 principal components
+figure;
+plot(PCs(:,1),'b','LineWidth',2)
+hold on
+plot(PCs(:,2),'r','LineWidth',2)
+plot(PCs(:,3),'g','LineWidth',2)
+plot(PCs(:,4),'c','LineWidth',2)
+plot(PCs(:,5),'m','LineWidth',2)
+xlabel('Number of , $r$','Interpreter','latex')
+ylabel('Principal Components','Interpreter','latex')
+grid on
+axis square
+set(gca,'TickLabelInterpreter','latex')
+set(gca,'FontSize',16)
+%--------------
+
+%Compressed Image Reconstruction
 
 %truncate SVD components: compress image
 plotind = 2;
-% Select few dominant PCs and ignore the rest.
+% Select a few dominant PCs and ignore the rest.
 for r = [5 20 100] %truncation value
     %Back project data to original basis with adding the mean back to the
     %image
-    Xapprox = (V(:,1:r) * proj(:,1:r)') + mn*ones(1,ny); %approximated/reconstructed image
+    Xapprox = (V(:,1:r) * PCs(:,1:r)') + mn*ones(1,ny); %approximated/reconstructed image
 %     Xapprox = U(:,1:r)*S(1:r,1:r)*V(:,1:r)'; %approximated/reconstructed image
     %show the approximated/compressed image
-    figure(1)
+    figure(2)
     hold on
     subplot(2,2,plotind)
     plotind = plotind + 1;

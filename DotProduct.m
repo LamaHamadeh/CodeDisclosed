@@ -37,11 +37,34 @@ theta_ac2     = acos((Dot_ac2)/(A_ac_norm2*B_ac_norm2)); %in radians
 theta_ac2_deg = rad2deg(theta_ac2); %in degrees
 %--------------------------------------------------------------------------
 
-% %Obtuse angle (negative dot product)
-% A_ob = [sqrt(3) 1];
-% B_ob = [-sqrt(3) 1];
+%Obtuse angle (negative dot product)
+A_ob = [5 2 1];
+B_ob = [-3 2 4];
 
-%--------------
+%Using definition
+%----------------
+%calculate the dot product
+Dot_ob1       = A_ob(1)*B_ob(1)+A_ob(2)*B_ob(2)+A_ob(3)*B_ob(3);
+%calculate the norm of A_ob vector
+A_ob_norm1    = sqrt(A_ob(1)^2+A_ob(2)^2+A_ob(3)^2);
+%calculate the norm of B_ob vector
+B_ob_norm1    = sqrt(B_ob(1)^2+B_ob(2)^2+B_ob(3)^2);
+% Calculate the angle between A_ob and B_ob
+theta_ob1     = acos((Dot_ob1)/(A_ob_norm1*B_ob_norm1)); %in radians
+theta_ob1_deg = rad2deg(theta_ob1); %in degrees
+
+%Using MATLAB commands
+%---------------------
+%calculate the dot product
+Dot_ob2       = dot(A_ob,B_ob);
+%calculate the norm of A_ac vector
+A_ob_norm2    = norm(A_ob);
+%calculate the norm of B_ac vector
+B_ob_norm2    = norm(B_ob);
+% Calculate the angle between A_ac and B_ac
+theta_ob2     = acos((Dot_ob2)/(A_ob_norm2*B_ob_norm2)); %in radians
+theta_ob2_deg = rad2deg(theta_ob2); %in degrees
+%--------------------------------------------------------------------------
 
 %right angle (dot product is zero)
 A_r = [2, 1, -3];

@@ -8,7 +8,7 @@ clear all;
 close all;
 clc
 
-%actue angle (positive dot product)
+%acute angle (positive dot product)
 A_ac = [5, 5, 4];
 B_ac = [6, 5, 3];
 

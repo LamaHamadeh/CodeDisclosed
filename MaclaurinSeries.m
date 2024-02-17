@@ -1,8 +1,8 @@
 %Code Disclosed | 
-%This code calculates Maclaurin Series of the function sqrt(x) and shows that 
-% the higher we go with the Maclaurin Series order, the closer we get to the
+%This code calculates the Maclaurin Series of the function fx and shows that 
+% The higher we go with the Maclaurin Series order, the closer we get to the
 % actual exact function, and hence improves its approximation to the
-% fucntion.
+% function.
 %--------------
 
 clear all;
@@ -11,7 +11,7 @@ close all;
 
 %define the spatial variable/coordinates
 x = linspace(-10,10,100);
-%define the exact function we want to approxinate
+%define the exact function we want to approximate
 fx = x.^3-10*x.^2+6;
 %--------------
 
@@ -38,7 +38,7 @@ MS4 = x.^3; %4 term TS
 Approx = MS1+MS2+MS3+MS4; %The approximate function calculated using TS
 %--------------
 
-%visualise the comparison between the exact function the calculated Taylor
+% Visualise the comparison between the exact function the calculated Taylor
 %series terms
 plot(x,MS1,'r--','LineWidth',1)
 plot(x,MS1+MS2,'g--','LineWidth',1)
@@ -55,7 +55,7 @@ set(gca,'TickLabelInterpreter','latex','FontSize',12)
 %Using Matlab Built-in function
 %create variable x
 syms x
-%define the function as a fucntion of x
+%define the function as a function of x
 f = x^3-10*x^2+6;
 
 %caluclate Maclaurin series up to the 5th order
@@ -64,9 +64,9 @@ MS = taylor(f,x); % approximates f with the Maclaurin series expansion of f up
 
 %calculate Maclaurin series up to the 8th order
 MSHigher = taylor(f,x,'Order',8); %Use Order to control the truncation order. 
-% For example, approximate the same expression up to the orders 8.
+% For example, approximate the same expression up to the order 8.
 
-%calculate Taylor series up to the firth order at the point a=3.
+%calculate Taylor series up to the fifth order at the point a=3.
 TS = taylor(f,x,3); % approximates f with the Taylor series expansion of f up 
 % to the fifth order at the point a = 3
 
